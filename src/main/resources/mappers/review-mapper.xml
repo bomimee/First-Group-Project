@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="review">
+<insert id="add" parameterType="rvo">
+insert into review(rating, review_content, review_file, member_idx, pro_idx, review_regdate, member_id)
+values(#{rating}, #{review_content}, #{review_file},#{member_idx}, #{pro_idx}, sysdate(), #{member_id})
+</insert>
+
+<select id="lists" parameterType="String" resultType="rvo">
+select * from review where pro_idx=#{pro_idx} order by review_regdate desc LIMIT 2
+</select>
+<select id="lists-All" parameterType="String" resultType="rvo">
+select * from review where pro_idx=#{pro_idx} order by review_regdate
+</select>
+
+ <select id="myReviewList" parameterType="String" resultType="rvo">
+ select * from review where member_idx=#{member_idx} order by review_regdate desc
+ </select>
+
+<select id="detail" parameterType="String" resultType="rvo">
+select * from review where review_idx=#{review_idx}
+</select>
+
+<update id="update" parameterType="rvo">
+update review set rating=#{rating},review_content= #{review_content}, review_file=#{review_file}, review_regdate=sysdate()
+where review_idx=#{review_idx}
+</update>
+<select id="count" resultType="int">
+select count (*) from review where pro_idx=#{pro_idx}
+
+</select>
+<select id="avg" resultType="int">
+select round(avg(rating), 1) from review where pro_idx=#{pro_idx}
+</select>
+
+<delete id="delete" parameterType="String">
+delete from review where review_idx=#{review_idx}
+</delete>
+</mapper>
+
+

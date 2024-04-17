@@ -1,0 +1,206 @@
+@charset "UTF-8";
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
+
+.cpdetailcontainer{
+	padding-top: 4.06rem;
+	width: 100%;
+/* 	min-height: 85vh; */
+}
+.cpdetailtitlediv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cpdetailtitle{
+	margin-top: 4rem;
+	padding: 2rem 0;
+	border-bottom: 1px solid black;
+	width: 70%;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+.cpdetailwrapper{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cpdetaildiv{
+	width: 70%;
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+}
+.cpdetailul{
+	width: 100%;
+	list-style: none;
+}
+.cpdetailli{
+	width: 100%;
+	display: flex;
+	margin: 1rem auto;
+	align-items: center;
+/* 	justify-content: center; */
+}
+.cpdetailitem1{
+	margin-right: 3rem;
+	margin-bottom: 1rem;
+}
+.cpdetailitem{
+	width: 30%;
+	height: 1.7rem;
+	margin-bottom: 1rem;
+	border: 1px solid black;
+	align-items: center;
+	background-color: lightgray;
+}
+.cpdetailitem1-1{
+	height: 1.7rem;
+	flex-grow: 1;
+	margin-bottom: 1rem;
+	border: 1px solid black;
+}
+.detailMsgcontent{
+	display: flex;
+	text-align: center;
+	align-items: center;
+	font-size: 1.3rem;
+}
+.cpcontent{
+	width: 100%;
+	height: 40vh;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+	border: 1px solid black;
+}
+.cpdetail{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.cpdetail1{
+	min-width: 8rem;
+	height: 1.9rem;
+	color: black;
+	cursor: pointer;
+	border: 1px solid black;
+	background-color: white;
+	margin-right: 1rem;
+}
+.cpdetail2{
+	min-width: 8rem;
+	height: 1.9rem;
+	background-color: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+	margin-left: 1rem;
+}
+
+
+
+
+
+
+
+.realdelete{
+	width: 100%;
+	margin-bottom: 1rem;
+}
+.deleteselect{
+	width: 100%;
+}
+.deleteok{
+	margin-right: 1rem;
+	padding: 0.5rem 1rem;
+	background-color: white;
+}
+/* 닫기 버튼 스타일 */
+.close {
+    position: absolute;
+    top: 3px;
+    right: 2px;
+    cursor: pointer;
+    color: black;
+    font-size: 2rem;
+    border-color: black;
+}
+.cp_commentdiv{
+	width: 100%;
+	align-items: center;
+	background-color: #f7f7f7
+}
+.cp_comment_list{
+	width: 100%;
+	border-bottom: 1px solid white;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+}
+.cp_comment_updel{
+	display: flex;
+}
+.cp_comment{
+	border: none;
+}
+.cp_comment2{
+	border: none;
+	width: 100%;
+	background-color: #f7f7f7;
+}
+.cp_comment_form{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 90% 10%;
+	border: 1px solid black;
+	margin-bottom: 2rem;
+	margin-top: 4rem;
+}
+.cp_comment_form2{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 90% 10%;
+	border: 1px solid black;
+	margin: 2rem 0;
+}
+.cp_comment_formdiv{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 10% 70% 12.5% 7.5%;
+/* 	border: 1px solid black; */
+	
+}
+.cp_comment_formdiv2{
+	width: 100%;
+	display: none;
+/* 	grid-template-columns: 10% 70% 15% 5%; */
+/* 	border-bottom: 1px solid black; */
+/* 	display: grid; */
+/* 	grid-template-columns: 90% 10%; */
+/* 	border-bottom: 1px solid black; */
+}
+.cp_comment_button{
+	min-width: 8rem;
+	padding: 0 2.2rem;
+	border: none;
+	border-left: 1px solid black;
+	cursor: pointer;
+	background-color: white;
+}
+.cp_comment_name{
+	text-align: center;
+}
+.cp_comment_button2{
+	border: none;
+	text-decoration: underline;
+	cursor: pointer;
+	background-color: #f7f7f7;
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,135 @@
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
+
+
+
+.main .mainMenu {
+    float: left;
+    width: 100%; 
+    min-height: 100vh; 
+    background-color: white;
+}
+
+.main .mainMenu .maintitle {
+    width:50%;
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding: 2rem 0; 
+    margin: 7rem auto; 
+}
+
+.main .mainMenu table {
+    width: 50%; 
+    margin: 0 auto; 
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.main .mainMenu table,
+.main .mainMenu table th,
+.main .mainMenu table td {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+.main::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.address_update, .address_delete{
+	background: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+.addr_list_a{
+	text-decoration: none;
+	color: black;
+}
+.btn{
+    width:15%;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+.btn ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.btn ul li{
+    padding: 5px;
+}
+
+#int1 {
+    border: 1px solid black;
+    border-radius: 5px;
+    /*display: block;*/
+    font: 16px;
+    padding: 10px 15px;
+    margin: 27px auto;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+#int2 {
+    
+    border: 1px solid black;
+    border-radius: 5px;
+    /*display: block;*/
+    font: 16px;
+    padding: 10px 15px;
+    margin: 27px auto;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+#text_list{
+    position: fixed;
+    display: flex;
+    text-align: left;
+    justify-content: space-around;
+    width: 100%;
+   /* padding-bottom: 50px;*/
+    border-top: 1px solid gray;
+    padding: 10px; 
+    background-color: white; 
+    box-sizing: border-box;
+    bottom: 0;
+    
+}
+.text_box {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.text_box li{
+    list-style-type: none;
+    padding: 0 auto; 
+    margin: 0px;
+    width: 100%;
+}
+
+.a_qa .a_bp{
+    text-decoration: none;
+    color: black; 
+}
+
+.btn_images {
+    list-style-type: none;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+}
+
+.btn_images a {
+    margin-right: 10px; 
+}
+
+.btn_1{
+    width: 1rem;
+    height: 1rem;
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	<insert id="insert" parameterType="mvo">
+		insert into createAccount(member_id, member_name, member_dob, member_email, member_pwd, 
+								  member_postalCode, member_addr, member_detailAddr, member_extraAddr, member_phone, member_gender, member_points)
+			values(#{member_id}, #{member_name},#{member_dob},#{member_email},#{member_pwd},
+					#{member_postalCode}, #{member_addr}, #{member_detailAddr}, #{member_extraAddr}, #{member_phone},#{member_gender}, 100)
+	</insert>
+	
+<!-- 	<select id="login" parameterType="mvo" resultType="mvo">
+		select * from createAccount where member_id=#{member_id} and member_pwd=#{member_pwd}
+	</select> -->
+	
+	<select id="login" parameterType="mvo" resultType="mvo">
+		select * from createAccount where member_id=#{member_id}
+	</select>
+	
+	<select id="idchk" parameterType="String" resultType="int">
+ 		select count(*) from createAccount where member_id=#{member_id}
+ 	</select>
+ 	
+ 	<select id="updateDetail" parameterType="String" resultType="mvo">
+		select * from createAccount where member_idx=#{member_idx}
+	</select>
+	
+	<update id="update" parameterType="mvo">
+		update createAccount  
+ 		set member_name=#{member_name}, 
+ 			member_email=#{member_email},
+ 			member_pwd=#{member_pwd},
+ 			member_postalCode=#{member_postalCode}, 
+ 			member_addr=#{member_addr}, 
+ 		    member_detailAddr=#{member_detailAddr}, 
+ 		    member_extraAddr=#{member_extraAddr}, 
+ 		    member_phone = #{member_phone} 
+ 		where member_idx = #{member_idx}
+	</update>
+	
+	<select id="member_detail" parameterType="String" resultType="mvo">
+		select * from createAccount where member_idx=#{member_idx}
+	</select>
+	
+	<delete id="delete" parameterType="String">
+		delete from createAccount where member_idx=#{member_idx}
+	</delete>
+ 	<select id="detail" parameterType="String" resultType="mvo">
+ 	select *  from createAccount where member_id=#{member_id}
+ 	</select>
+	
+	<select id="findPwd" parameterType="String" resultType="mvo">
+		select * from createAccount where member_id=#{member_id}
+	</select>
+	
+	<update id="tempUpdatePwd" parameterType="mvo">
+        update createAccount
+         set member_pwd=#{member_pwd}
+         where member_id = #{member_id}
+    </update>
+    
+    <select id="findMyId" parameterType="String" resultType="mvo">
+		select * from createAccount where member_name=#{member_name}
+	</select>
+</mapper>

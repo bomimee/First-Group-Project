@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qa">
+	<select id="count" resultType="int">
+		select count(*) from qa where qa_cidx IS NULL
+	</select>
+	<select id="qa_list" parameterType="Map" resultType="qavo">
+		select qa.*, createAccount.member_name
+		from qa
+		join createAccount ON qa.member_idx = createAccount.member_idx
+		where qa.qa_cidx IS NULL
+		order by qa.qa_idx desc limit #{limit} offset #{offset}
+<!-- 		select * from qa order by qa_groups desc, qa_lev asc limit #{limit} offset #{offset} -->
+	</select>
+	<insert id="qa_insert" parameterType="qavo">
+		insert into qa(member_idx, qa_type, qa_subject, qa_content, qa_step, qa_lev, qa_regdate)
+		values(#{member_idx}, #{qa_type}, #{qa_subject}, #{qa_content}, 0, 0, sysdate())
+	</insert>
+	<select id="qa_detail" parameterType="String" resultType="qavo">
+		select qa.*, createAccount.member_name
+	    from qa 
+	    left join createAccount on qa.member_idx = createAccount.member_idx
+	    where qa_idx = #{qa_idx}
+	</select>
+	<update id="qa_delete" parameterType="qavo">
+	 	update qa set qa_active = 1 where qa_idx=#{qa_idx}
+	 </update>
+	 <update id="qa_comment_delete" parameterType="qavo">
+	 	update qa set qa_active = 1 where qa_idx=#{qa_idx}
+	 </update>
+<!-- 	 <update id="qa_levupdate" parameterType="String"> -->
+<!-- 	 	update qa set qa_lev = qa_lev + 1 where qa_cidx = #{qa_cidx} and qa_lev >= #{qa_lev} -->
+<!-- 	 </update> -->
+	 <insert id="qa_comment_insert" parameterType="qavo">
+<!-- 	 	<selectKey keyProperty="qa_groups" resultType="String" order="BEFORE"> -->
+<!--             SELECT (IFNULL(MAX(qa_idx),0)+1) as qa_groups FROM qa -->
+<!--         </selectKey> -->
+<!-- 	 	insert into qa(member_idx, qa_cidx, qa_comment, qa_groups, qa_step, qa_lev, qa_regdate) -->
+<!-- 	 	values(#{member_idx}, #{qa_idx}, #{qa_comment}, #{qa_groups}, #{qa_step}, #{qa_lev}, sysdate()) -->
+	 	insert into qa(member_idx, qa_cidx, qa_comment, qa_step, qa_regdate)
+	 	values(#{member_idx}, #{qa_idx}, #{qa_comment}, #{qa_step}, sysdate())
+	 </insert>
+	 <select id="qa_comment_list" parameterType="String" resultType="qavo">
+<!-- 	 	select * from qa where qa_cidx = #{qa_idx} order by qa_cidx asc, qa_lev asc -->
+	 	select * from qa where qa_cidx = #{qa_idx} order by qa_cidx asc
+	 </select>
+	 <update id="qa_comment_update" parameterType="qavo">
+	 	update qa set qa_comment = #{qa_comment} where qa_idx = #{qa_idx}
+	 </update>
+	 <update id="qa_update" parameterType="qavo">
+	 	update qa set qa_type = #{qa_type}, qa_subject = #{qa_subject}, qa_content = #{qa_content} where qa_idx = #{qa_idx}
+	 </update>
+</mapper>

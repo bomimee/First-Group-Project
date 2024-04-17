@@ -1,0 +1,97 @@
+@charset "UTF-8";
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
+
+.cpdetailcontainer{
+	padding-top: 4.06rem;
+	width: 100%;
+/* 	min-height: 85vh; */
+}
+.cpdetailtitlediv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cpdetailtitle{
+	margin-top: 4rem;
+	padding: 2rem 0;
+	border-bottom: 1px solid black;
+	width: 70%;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+.cpdetailwrapper{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cpdetaildiv{
+	width: 70%;
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+}
+.cpdetailul{
+	width: 100%;
+	list-style: none;
+}
+.cpdetailli{
+	width: 100%;
+	display: flex;
+	margin: 1rem auto;
+	align-items: center;
+/* 	justify-content: center; */
+}
+.cpdetailitem1{
+	margin-right: 3rem;
+	margin-bottom: 1rem;
+}
+.cpdetailitem{
+	width: 30%;
+	height: 1.7rem;
+	margin-bottom: 1rem;
+	border: 1px solid black;
+	align-items: center;
+}
+.cpdetailitem1-1{
+	height: 1.7rem;
+	flex-grow: 1;
+	margin-bottom: 1rem;
+	border: 1px solid black;
+}
+.detailMsgcontent{
+	display: flex;
+	text-align: center;
+	align-items: center;
+	font-size: 1.3rem;
+}
+.cpcontent{
+	width: 100%;
+	height: 40vh;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+	border: 1px solid black;
+}
+.cpdetail{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.cpdetail1{
+	min-width: 8rem;
+	height: 1.9rem;
+	color: black;
+	cursor: pointer;
+	border: 1px solid black;
+	background-color: white;
+	margin-right: 1rem;
+}
+.cpdetail2{
+	min-width: 8rem;
+	height: 1.9rem;
+	background-color: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+	margin-left: 1rem;
+}

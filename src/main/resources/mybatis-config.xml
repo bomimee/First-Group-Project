@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 마이바티스에서 쿼리에 매핑되는 파라미터에 null값이 있을경우 에러발생 방지 -->
+		<setting name="jdbcTypeForNull" value="NULL" />
+		<!-- 마이바티스에서 캐시기능 종료 -->
+		<setting name="cacheEnabled" value="false" />
+	</settings>
+	<typeAliases>
+		<typeAlias type="com.ict.project.dao.ProductsVO" alias="prosvo" />
+		<typeAlias type="com.ict.project.dao.QAVO" alias="qavo" />
+		<typeAlias type="com.ict.project.dao.MemberVO" alias="mvo" />
+		<typeAlias type="com.ict.project.dao.ProVO" alias="pvo"/>
+		<typeAlias type="com.ict.project.dao.CartVO" alias="cvo"/>
+		<typeAlias type="com.ict.project.dao.ReviewVO" alias="rvo"/>
+		<typeAlias type="com.ict.project.dao.ComplainVO" alias="cpvo"/>
+		<typeAlias type="com.ict.project.dao.WishListVO" alias="wvo"/>
+		<typeAlias type="com.ict.project.dao.OrderVO" alias="ovo"/>
+		<typeAlias type="com.ict.project.dao.AddressListVO" alias="avo"/>
+<!-- <typeAlias type="com.ict.project.dao.MemberInfoVO" alias="mivo" /> -->
+	</typeAliases>
+	<mappers>
+		<mapper resource="mappers/products-mapper.xml" />
+		<mapper resource="mappers/qa-mapper.xml" />
+		<mapper resource="mappers/member-mapper.xml" />
+		<mapper resource="mappers/review-mapper.xml" />
+		<mapper resource="mappers/complain-mapper.xml" />
+		<mapper resource="mappers/wishList-mapper.xml" />
+		<mapper resource="mappers/order-mapper.xml" />
+
+<!-- <mapper resource="mappers/memberinfo-mapper.xml" /> -->
+	</mappers>
+</configuration>
+

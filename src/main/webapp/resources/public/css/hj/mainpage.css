@@ -1,0 +1,45 @@
+@charset "UTF-8";
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
+.article_page{
+	width: 100%;
+/* 	min-height: 100%; */
+/* 	padding-top: 4.06rem; */
+}
+
+.product-list{
+	width: 100%;
+}
+
+.product_main{
+	width: 100%;
+}
+.box {
+	display: flex;
+	width:100%;
+	height: auto;
+	min-height: 100%;
+	padding-bottom: 2rem;
+}
+a .box_2{
+	display:flex;
+	width: 25%;
+	border: 1px solid black;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .box_2 {
+        width: 33%; /* 화면이 768px 이하로 줄어들면 이미지를 2개로 배열 */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .box_2 {
+        width: 100%; /* 화면이 480px 이하로 줄어들면 이미지를 한 줄에 하나씩 배열 */
+    }
+}
+
+

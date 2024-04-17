@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="complain">
+ 	<select id="cp_count" resultType="int">
+ 		select count(*) from complain
+ 	</select>
+ 	<select id="cp_list" parameterType="Map" resultType="cpvo">
+ 		SELECT complain.*, createAccount.member_name
+		FROM complain
+		LEFT JOIN createAccount ON complain.member_idx = createAccount.member_idx
+		ORDER BY complain.complain_idx desc  limit #{limit} offset #{offset}
+ 	</select>
+ 	<insert id="cp_insert" parameterType="cpvo">
+ 		<selectKey keyProperty="complain_groups" resultType="String" order="BEFORE">
+            SELECT (IFNULL(MAX(complain_idx),0)+1) as complain_groups FROM complain
+        </selectKey>
+ 		insert into complain(member_idx, complain_type, complain_subject, complain_content, complain_groups, complain_step, complain_lev, complain_reg, f_name)
+ 		values(#{member_idx}, #{complain_type}, #{complain_subject}, #{complain_content}, #{complain_groups}, 0, 0, sysdate(), #{f_name})
+ 	</insert>
+ 	<select id="cp_detail" parameterType="String" resultType="cpvo">
+ 		select complain.*, createAccount.member_name 
+ 		from complain 
+ 		left join createAccount on complain.member_idx = createAccount.member_idx 
+ 		where complain_idx = #{complain_idx}
+ 	</select>
+ 	<update id="cp_delete" parameterType="cpvo" >
+ 		update complain set complain_active = 1 where complain_idx = #{complain_idx}
+ 	</update>
+ 	<update id="cp_comment_delete" parameterType="cpvo">
+	 	update complain set complain_active = 1 where complain_idx=#{complain_idx}
+	 </update>
+<!-- 	 <update id="qa_levupdate" parameterType="String"> -->
+<!-- 	 	update qa set qa_lev = qa_lev + 1 where qa_cidx = #{qa_cidx} and qa_lev >= #{qa_lev} -->
+<!-- 	 </update> -->
+	 <insert id="cp_comment_insert" parameterType="cpvo">
+<!-- 	 	<selectKey keyProperty="qa_groups" resultType="String" order="BEFORE"> -->
+<!--             SELECT (IFNULL(MAX(qa_idx),0)+1) as qa_groups FROM qa -->
+<!--         </selectKey> -->
+<!-- 	 	insert into qa(member_idx, qa_cidx, qa_comment, qa_groups, qa_step, qa_lev, qa_regdate) -->
+<!-- 	 	values(#{member_idx}, #{qa_idx}, #{qa_comment}, #{qa_groups}, #{qa_step}, #{qa_lev}, sysdate()) -->
+	 	insert into complain(member_idx, complain_cidx, complain_comment, complain_step, complain_reg)
+	 	values(#{member_idx}, #{complain_idx}, #{complain_comment}, #{complain_step}, sysdate())
+	 </insert>
+	 <select id="cp_comment_list" parameterType="String" resultType="cpvo">
+<!-- 	 	select * from qa where qa_cidx = #{qa_idx} order by qa_cidx asc, qa_lev asc -->
+	 	select * from complain where complain_cidx = #{complain_idx} order by complain_cidx asc
+	 </select>
+	 <update id="cp_comment_update" parameterType="cpvo">
+	 	update complain set complain_comment = #{complain_comment} where complain_idx = #{complain_idx}
+	 </update>
+ 	
+ 	<update id="cp_update" parameterType="cpvo">
+ 		update complain
+ 		set complain_type = #{complain_type}, complain_subject = #{complain_subject}, complain_content = #{complain_content}, f_name = #{f_name} 
+ 		where complain_idx = #{complain_idx}
+ 	</update>
+ </mapper>

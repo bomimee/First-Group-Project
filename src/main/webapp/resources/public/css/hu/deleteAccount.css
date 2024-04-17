@@ -1,0 +1,120 @@
+*{box-sizing: border-box;
+    margin: 0px; 
+    padding: 0px;; 
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+}
+
+.main .sideMenu {
+    float: left;
+    width: 20%; 
+    max-width: 250px; 
+    min-height: 100vh; 
+    border-right: 2px solid black;
+    background-color: white;
+}
+
+.main .sideMenu ul {
+    list-style-type: none;
+    margin: 14rem 2rem;
+}
+
+.main .sideMenu ul li {
+    padding: 1rem 0; 
+}
+
+.main .sideMenu ul li a {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.main .mainMenu {
+    float: left;
+    width: 80%; 
+    min-height: 100vh; 
+    background-color: white;
+                            
+}
+
+.main .mainMenu .maintitle {
+    width:40%;
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding: 2rem 0; 
+    margin: 7rem auto; 
+}
+
+#signup {
+    width: 100%; 
+    max-width: 31.25rem; 
+    margin: 0 auto; 
+    border-radius: 10px;
+    padding: 0.94rem;
+}
+
+#signup .accountbody {
+    margin-bottom: 1.88rem;
+}
+
+#signup ul li {
+    line-height: 1.88rem;
+    list-style-type: none;
+    padding: 0.19rem 5%; 
+    margin-bottom: 0.31rem;
+}
+
+#signup .accountbody:nth-of-type(1) label {
+    float: left;
+    font-size: 0.92rem;
+    width: 22%; 
+}
+
+#signup input[type="text"],
+#signup input[type="password"] {
+    width: 100%; 
+    max-width: 15.6rem; 
+    padding: 2px;
+}
+
+.btn{
+    width:15%;
+    margin: 0px 50px 0px 140px;
+    list-style-type: none;
+}
+
+.btn ul{
+    width: 10%;
+    display: flex;
+    list-style-type: none;
+    padding-left: 0.10rem;
+    margin: 0  auto ;
+}
+
+.btn ul li{
+    padding: 0.31rem;
+    margin-right: 0.39rem;
+}
+
+#signup #btn1 {
+    border: 1px solid black;
+    border-radius: 5px;
+    font: 16px;
+    padding: 8px 13px;
+    margin: 0px auto;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+#signup #btn2 {
+    border: 1px solid black;
+    border-radius: 5px;
+    font: 16px;
+    padding: 8px 13px;
+    margin: 0px auto;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}

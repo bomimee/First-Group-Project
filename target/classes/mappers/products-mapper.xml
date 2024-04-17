@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="products">
+	<select id="list" resultType="prosvo">
+		select * from products where pro_type = #{pro_type} order by pro_idx desc
+	</select>
+
+	<select id="detail" parameterType="String" resultType="pvo">
+	select * from products where pro_idx=#{pro_idx} 
+	</select>
+<!-- <select id="getCartList" parameterType="String" resultType="prosvo"> -->
+<!-- 	select * from products where pro_idx=#{pro_idx} -->
+<!-- </select> -->
+	<select id="sortlist" parameterType="Map" resultType="prosvo">
+        <if test="sort == 'latest'">
+            select * from products where pro_type = #{pro_type} order by pro_idx desc
+        </if>
+        <if test="sort == 'lowPrice'">
+            select * from products where pro_type = #{pro_type} order by price ASC, pro_idx asc
+        </if>
+        <if test="sort == 'highPrice'">
+            select * from products where pro_type = #{pro_type} order by price desc, pro_idx asc
+        </if>
+        <if test="sort == 'topRating'">
+		    SELECT p.*, COALESCE(avg_rating, 0) AS avg_rating
+		    FROM products p
+		    LEFT JOIN (
+		        SELECT pro_idx, AVG(rating) AS avg_rating
+		        FROM review
+		        GROUP BY pro_idx
+		    ) AS avg_ratings ON p.pro_idx = avg_ratings.pro_idx
+		    WHERE p.pro_type = #{pro_type}
+		    ORDER BY COALESCE(avg_rating, 0) DESC, p.pro_idx ASC
+        </if>
+        <if test="sort == 'reviewcount'">
+            SELECT p.*
+			FROM products p
+			LEFT JOIN (
+			    SELECT pro_idx, COUNT(*) AS review_count
+			    FROM review
+			    GROUP BY pro_idx
+			) r ON p.pro_idx = r.pro_idx
+			WHERE p.pro_type = #{pro_type}
+			ORDER BY r.review_count DESC, p.pro_idx ASC;
+        </if>
+    </select>
+    
+    <select id="keylist" resultType="prosvo" parameterType="String" >
+    	<!-- SELECT * from products where pro_type = #{pro_type} and pro_name like  CONCAT('%', #{pro_name}, '%'); -->
+    	<!-- SELECT * FROM products WHERE  pro_name = #{pro_name};  -->
+
+    	SELECT * FROM products WHERE pro_name LIKE CONCAT('%', 'cap', '%') 
+    </select>
+</mapper>

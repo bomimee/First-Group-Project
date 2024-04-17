@@ -1,0 +1,204 @@
+@charset "UTF-8";
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
+
+.pcontainer{
+	padding-top: 4.06rem;
+    width: 100%;
+}
+.pwrapper{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	line-height: 2rem;
+}
+.sub1{
+	width: 40%;
+	padding: 2rem;
+	padding-top: 4rem;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+.sbag{
+	border-bottom: 1px solid black;
+	border-right: none;
+	border-left: none;
+	text-align: center;
+	height: 15vh;
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.s1{
+	display: flex;
+	align-items: center;
+}
+.imgsize{
+	max-width: 10rem; 
+    max-height: 8rem;
+    border-top-left-radius: 65%;
+	border-top-right-radius: 30%;
+	border-bottom-left-radius: 30%;
+	border-bottom-right-radius: 65%;
+}
+.sub2{
+	margin: 2rem 0;
+	margin-top: 4rem;
+	text-align: center;
+}
+.pform{
+	border-top: 1px solid black;
+	border-right: none;
+	border-left: none;
+	width: 40%;
+	padding: 1rem 0;
+}
+.deldiv{
+	border-bottom: 1px solid black;
+	width: 100%;
+	padding-bottom: 2rem;
+}
+.deldiv2{
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid black;
+}
+.pform2{
+	list-style: none;
+	width: 100%;
+}
+.pform2 label{
+	display: block;
+}
+.ip1{
+	width: 100%;
+	height: 1.7rem;
+}
+.ip2{
+	width: 31%;
+	height: 1.7rem;
+}
+#uemail{
+	margin-bottom: 1rem;
+}
+#sb1{
+	background-color: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+.ts1{
+	text-align: center;
+}
+.dc{
+	display: flex;
+	width: 40%;
+	border-top: 1px solid black;
+	padding: 0.5rem 0;
+	align-items: center;
+}
+.dc3{
+	margin-right: 1rem;
+}
+/* #deliveryList{ */
+/* 	display: flex; */
+/* 	justify-content: center; */
+/* } */
+.pay1{
+/* 	margin-bottom : 2rem; */
+/* 	padding: 1rem 0; */
+	
+	display: flex;
+	border: 1px solid black;
+	border-left: none;
+	border-right: none;
+	width: 100%;
+	padding: 0.5rem 0;
+	align-items: center;
+}
+.text5{
+	padding: 1rem 0;
+	width: 100%;
+}
+.checkboxspan{
+	display: flex;
+	align-items: center;
+	
+}
+.lastprice{
+	border: 1px solid black;
+	border-right: none;
+	border-left: none;
+	text-align: center;
+	margin-bottom : 2rem;
+	padding: 1rem;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.paydiv{
+	width: 100%;
+}
+.pay3{
+	margin-right: 1rem;
+}
+.pp1{
+	width: 14%;
+	background-color: black;
+	color: white;
+	border: none;
+	height: 1.7rem;
+	cursor: pointer;
+}
+.ppay{
+	width: 100%;
+	height: 1.9rem;
+	background-color: black;
+	margin-bottom: 1rem;
+}
+.ppay3{
+	width: 100%;
+	height: 1.9rem;
+	margin: 2rem 0;
+	display: flex;
+	justify-content: space-around;
+}
+.ppay1{
+	width: 100%;
+	height: 1.9rem;
+	background-color: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+.ppay4{
+	width: 40%;
+	height: 1.9rem;
+	background-color: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+.ppay5{
+	width: 40%;
+	height: 1.9rem;
+	background-color: white;
+	color: black;
+	border: none;
+	cursor: pointer;
+	border: 1px solid black;
+}
+.total_price{
+	border: none;
+	text-align: right;
+	font-size: 1rem;
+	outline: none;
+}
+#pointValue{
+	font-style: italic;
+}
+input[type="checkbox"]{
+	width: 1rem;
+	height: 1rem;
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orders">
+ 	<select id="addrList" parameterType="String" resultType="avo">
+  		 select * from address where member_idx=#{member_idx}
+ 	 </select>
+ 	 <insert id="addrInsert" parameterType="avo">
+ 	 	insert into address(member_idx, send_name, send_postcode, send_addr, send_addrdetail, send_phone, send_msg)
+ 	 	values(#{member_idx}, #{send_name}, #{send_postcode}, #{send_addr}, #{send_addrdetail}, #{send_phone}, #{send_msg})
+ 	 </insert>
+ 	 <select id="addrDetail" parameterType="String" resultType="avo">
+ 	 	select * from address where address_idx=#{address_idx}
+ 	 </select>
+ 	 <update id="addrUpdate" parameterType="avo">
+ 	 	update address set send_name=#{send_name}, send_postcode=#{send_postcode}, send_addr=#{send_addr}, send_addrdetail=#{send_addrdetail}, send_phone=#{send_phone}, send_msg=#{send_msg}
+ 	 		where address_idx=#{address_idx}
+ 	 </update>
+ 	 <delete id="addrDelete" parameterType="String">
+ 	 	delete from address where address_idx=#{address_idx}
+ 	 </delete>
+ 	 <select id="myPoints" parameterType="String" resultType="String">
+ 	 	select member_points from createAccount where member_idx=#{member_idx}
+ 	 </select>
+ 	 <insert id="ordersInsert" parameterType="List">
+	    INSERT INTO orders (member_idx, pro_idx, send_name, send_postcode, send_addr, send_addrdetail, send_phone, send_msg, price, pro_quantity, pro_size, orderdate)
+	    VALUES
+	    <foreach collection="list" item="item" separator=",">
+	        (#{item.member_idx}, #{item.pro_idx}, #{item.send_name}, #{item.send_postcode}, #{item.send_addr}, #{item.send_addrdetail}, #{item.send_phone}, #{item.send_msg}, #{item.price}, #{item.pro_quantity}, #{item.pro_size}, sysdate())
+	    </foreach>
+ 	 </insert>
+<!--  	 	insert into orders(member_idx, pro_idx, send_name, send_postcode, send_addr, send_addrdetail, send_phone, send_msg, price, pro_quantity, pro_size, orderdate) -->
+<!--  	 	values(#{member_idx}, #{pro_idx}, #{send_name}, #{send_postcode}, #{send_addr}, #{send_addrdetail}, #{send_phone}, #{send_msg}, #{price}, #{pro_quantity}, #{pro_size}, sysdate()) -->
+	<update id="member_points" parameterType="mvo">
+		update createAccount set member_points = #{member_points} where member_idx = #{member_idx}
+	</update>
+	
+ 	<select id="member_detail" parameterType="String" resultType="ovo">
+		select o.order_idx as order_idx  , p.pro_name as pro_name , o.orderdate as orderdate , o.price as price 
+		from orders o, products p, createAccount c
+		where o.member_idx = c.member_idx and p.pro_idx = o.pro_idx and c.member_idx = #{c.member_idx}
+	</select> 
+	
+	<delete id="orderDelete" parameterType="Map">
+		delete from orders where member_idx = #{member_idx} and delivery_status=#{delivery_status}
+	</delete>
+</mapper>
+	

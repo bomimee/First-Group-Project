@@ -1,0 +1,138 @@
+@charset "UTF-8";
+*{box-sizing: border-box;
+    margin: 0px; 
+    padding: 0px;; 
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+}
+
+/*여기서부터 body*/
+h2 {
+    width: 90%; 
+    border-bottom: 2px solid black;
+    display: inline-block;
+    text-align: center;
+    padding: 20px; 
+    margin: 6rem auto 3rem;
+}
+
+#signup {
+    width: 90%; 
+    max-width: 31.25rem; 
+    margin: 0 auto; 
+    border-radius: 10px;
+    padding: 0.94rem;
+}
+
+#signup .accountbody {
+    margin-bottom: 1.88rem;
+}
+
+#signup ul li {
+    line-height: 1.88rem;
+    list-style-type: none;
+    padding: 0.19rem 5%; 
+    margin-bottom: 0.31rem;
+}
+
+#signup .accountbody:nth-of-type(1) label {
+    float: left;
+    font-size: 0.94rem;
+    width: 40%; 
+}
+
+#signup input[type="text"],
+#signup input[type="password"] {
+    width: 50%; 
+    max-width: 15.6rem; 
+    padding: 3px;
+}
+
+#signup #acc_postalcode{
+    font-size: 15px;
+    width: 30%; 
+    max-width: 140px; 
+}
+
+#signup #sample6_postcode{
+    font-size: 15px;
+    width: 30%; 
+    max-width: 140px; 
+}
+
+#signup #sample6_address{
+    margin: 0 auto;
+    font-size: 15px;
+    width: 30%; 
+    max-width: 140px; 
+}
+/*상우하좌*/
+#signup #sample6_detailAddress{
+    margin: 0px 0px 0px 170px;
+    font-size: 15px;
+    width: 30%; 
+    max-width: 140px; 
+}
+
+#signup #sample6_extraAddress{
+    margin: 0 auto;
+    font-size: 15px;
+    width: 20%; 
+    max-width: 140px; 
+}
+
+#post_btn{
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 3px 3px;
+    margin: 0px auto;
+    cursor: pointer;
+
+}
+
+.btn{
+    width:10%;
+    margin: 0px 180px;
+    list-style-type: none;
+}
+
+.btn ul{
+    display: flex;
+    list-style-type: none;
+    padding-left: 0.60rem;
+    
+}
+
+.btn ul li{
+    padding: 0.31rem;
+    margin-right: 0.31rem;
+}
+
+#signup #btn1 {
+    border: 1px solid black;
+    border-radius: 5px;
+    /*display: block;*/
+    font: 16px;
+    padding: 10px 15px;
+    margin: 0px auto;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+#signup #btn2 {
+    border: 1px solid black;
+    border-radius: 5px;
+    /*display: block;*/
+    font: 16px;
+    padding: 10px 15px;
+    margin: 0px auto;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
